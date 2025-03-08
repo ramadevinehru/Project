@@ -16,7 +16,7 @@ cursor.execute("CREATE DATABASE IF NOT EXISTS placement")
 conn = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='123456789',
+    password='your password',
     database='placement'
 )
 cursor = conn.cursor()
