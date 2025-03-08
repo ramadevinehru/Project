@@ -7,7 +7,7 @@ fake = Faker()
 conn = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='123456789'
+    password='your password'
 )
 cursor = conn.cursor()
 
