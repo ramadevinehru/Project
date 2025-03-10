@@ -1,25 +1,34 @@
 import mysql.connector
 from faker import Faker
 import random
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+host=os.getenv('HOST')
+password=os.getenv('PASSWORD')
+user=os.getenv('USER')
+database_name=os.getenv('DATABASE_NAME')
 
 fake = Faker()
 
 conn = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='123456789'
+    host=host,
+    user=user,
+    password=password
 )
 cursor = conn.cursor()
 
 cursor.execute("CREATE DATABASE IF NOT EXISTS placement")
 
 conn = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='123456789',
-    database='placement'
+    host=host,
+    user=user,
+    password=password,
+    database=database_name
 )
-cursor = conn.cursor()
+cursor = conn.cursor
 
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS Students (
